@@ -128,6 +128,7 @@ namespace AgarIo.Server.Logic.Blobs
 
             Mass += playerBlob.Mass;
             Game.RemoveBlob(playerBlob);
+            Game.AddBlob(playerBlob);
         }
 
         private void TryConsume(FoodBlob foodBlob)
@@ -245,7 +246,7 @@ namespace AgarIo.Server.Logic.Blobs
 
         public static float GetMaxSpeed(float mass)
         {
-            return 120.0f * (float)Math.Pow(mass, -1.0f / 4.5f) * Logic.Game.TickDurationMs / 40.0f;
+            return 360.0f * (float)Math.Pow(mass, -1.0f / 4.5f) * Logic.Game.TickDurationMs / 40.0f;
         }
     }
 }

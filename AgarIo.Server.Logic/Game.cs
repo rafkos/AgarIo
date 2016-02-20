@@ -217,6 +217,14 @@
                     if (player.Join)
                     {
                         var position = RemoveFoodAndGetSpawnPosition();
+
+                        var oldPlayerBlobs = _blobs.OfType<PlayerBlob>().Where(b => b.Owner.Name == player.Name).ToList();
+
+                        foreach (var oldBlob in oldPlayerBlobs)
+                        {
+                            RemoveBlob(oldBlob);
+                        }
+
                         var playerBlob = new PlayerBlob(player, this, _physics, _stateTracker, position, true);
 
                         AddBlob(playerBlob);

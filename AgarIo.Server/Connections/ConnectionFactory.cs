@@ -43,6 +43,12 @@ namespace AgarIo.Server.Connections
                 return new AdminConnection(_adminCommandFactory, _stateTracker, _game);
             }
 
+            if (loginDto.IsVisualization)
+            {
+                Log.Info($"Visualization for Plaer {loginDto.Login} logged in");
+                return new VisualizationConnection(_adminCommandFactory, _stateTracker, _game);
+            }
+
             Log.Info($"Player {loginDto.Login} logged in");
             return new PlayerConnection(loginDto, _playerCommandFactory, _playerRepository, _game);
         }

@@ -7,5 +7,7 @@ namespace AgarIo.Contract
         public string Password { get; set; }
 
         public bool IsAdmin { get; set; }
+
+        public bool IsVisualization { get; set; }
     }
 }

@@ -104,6 +104,7 @@
     <Compile Include="CommandExceptions\CommandErrorCode.cs" />
     <Compile Include="CommandExceptions\CommandException.cs" />
     <Compile Include="CommandExceptions\WrongLoginException.cs" />
+    <Compile Include="Connections\VisualizationConnection.cs" />
     <Compile Include="IAdminCredentials.cs" />
     <Compile Include="Infrastructure\AutofacServiceWrapper.cs" />
     <Compile Include="Connections\ConnectionFactory.cs" />
