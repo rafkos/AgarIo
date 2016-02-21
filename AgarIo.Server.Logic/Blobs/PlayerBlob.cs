@@ -127,8 +127,8 @@ namespace AgarIo.Server.Logic.Blobs
             }
 
             Mass += playerBlob.Mass;
+            Mass = Math.Max(Mass, Game.Settings.MaxPlayerBlobMass);
             Game.RemoveBlob(playerBlob);
-            Game.AddBlob(playerBlob);
         }
 
         private void TryConsume(FoodBlob foodBlob)

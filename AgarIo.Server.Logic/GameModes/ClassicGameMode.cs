@@ -79,7 +79,7 @@ namespace AgarIo.Server.Logic.GameModes
                     _playerStats.Add(playerStat);
                 }
 
-                playerStat.Score = player.Blobs.Any() ? Math.Max(playerStat.Score, (int)player.Blobs.Sum(blob => blob.Mass)) : 0;
+                playerStat.Score = player.Blobs.Any() ? (int)player.Blobs.Sum(blob => blob.Mass) : 0;
             }
 
             return new ClassicGameModeData(_playerStats);
