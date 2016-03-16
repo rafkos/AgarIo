@@ -124,13 +124,13 @@
 
             var splitMass = Math.Min(blob.Mass / (numSplits + 1), Game.Settings.MinMassSplit);
 
-            blob.Mass += Mass;
-            Game.RemoveBlob(this);
-
             if (numSplits <= 0)
             {
                 return;
             }
+
+            blob.Mass += Mass;
+            Game.RemoveBlob(this);
 
             var bigSplits = 0;
             var endMass = blob.Mass - (numSplits * splitMass);

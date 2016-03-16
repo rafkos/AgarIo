@@ -127,7 +127,7 @@ namespace AgarIo.Server.Logic.Blobs
             }
 
             Mass += playerBlob.Mass;
-            Mass = Math.Max(Mass, Game.Settings.MaxPlayerBlobMass);
+            Mass = Math.Min(Mass, Game.Settings.MaxPlayerBlobMass);
             Game.RemoveBlob(playerBlob);
         }
 
